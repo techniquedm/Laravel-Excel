@@ -14,16 +14,16 @@ use Maatwebsite\Excel\Classes\FormatIdentifier;
 use Maatwebsite\Excel\Readers\LaravelExcelReader;
 use Maatwebsite\Excel\Writers\LaravelExcelWriter;
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
-use Laravel\Lumen\Application as LumenApplication;
 
 /**
- *
- * LaravelExcel Excel ServiceProvider
+ * LaravelExcel Excel ServiceProvider - Modified by Technique
+ * for compatibility with special working version of Herbert Framework
  *
  * @category   Laravel Excel
- * @package    maatwebsite/excel
+ * @package    technqiuedm/Laravel-Excel
  * @copyright  Copyright (c) 2013 - 2014 Maatwebsite (http://www.maatwebsite.nl)
  * @author     Maatwebsite <info@maatwebsite.nl>
+ * @author     Will Furphy - Technique (https://technique.software)
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
  */
 class ExcelServiceProvider extends ServiceProvider {
@@ -43,21 +43,17 @@ class ExcelServiceProvider extends ServiceProvider {
 
     public function boot()
     {
-        if ($this->app instanceof LumenApplication) {
-            $this->app->configure('excel');
-        } else {
             $this->publishes([
-                __DIR__ . '/../../config/excel.php' => config_path('excel.php'),
+                __DIR__ . '/../config/excel.php' => config_path('excel.php'),
             ]);
-        }
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/excel.php', 'excel'
+            __DIR__ . '/../config/excel.php', 'excel'
         );
 
         //Set the autosizing settings
         $this->setAutoSizingSettings();
-        
+
         //Enable an "export" method on Eloquent collections. ie: model::all()->export('file');
         Collection::macro('export', function($filename, $type = 'xlsx', $method = 'download') {
 	        $model = $this;
