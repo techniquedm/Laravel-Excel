@@ -1,11 +1,12 @@
-## Laravel Excel v2.1.* for Laravel 5
+## Laravel Excel v2.1.* for Herbert
 
-Looking for Laravel Excel for Laravel 4? Visit the [`1.3` branch](https://github.com/Maatwebsite/Laravel-Excel/tree/1.3)
+### Modified by Technique for use in Wordpress with modified Herbert Framework
+This is for a single use case currently but we are hoping to release modified framework at some point.
 
 [<img src="http://www.maatwebsite.nl/img/excel_banner.jpg"/>](http://www.maatwebsite.nl/laravel-excel/docs)
 [<img src="https://cloud.githubusercontent.com/assets/7728097/6332170/1b495af2-bb84-11e4-9a93-34a9abc01840.jpg"/>](http://www.maatwebsite.nl/vacature-php-programmeur-maastricht)
 
-Laravel Excel brings the power of PHPOffice's PHPExcel to Laravel 5 with a touch of the Laravel Magic. It includes features like: importing Excel and CSV to collections, exporting models, array's and views to Excel, importing batches of files and importing a file by a config file.
+Laravel Excel brings the power of PHPOffice's PHPExcel to Herbert (custom) with a touch of the Laravel Magic. It includes features like: importing Excel and CSV to collections, exporting models, array's and views to Excel, importing batches of files and importing a file by a config file.
 
 - Import into Laravel **Collections**
 - Export **Blade views** to Excel and CSV with optional CSS styling
@@ -43,11 +44,30 @@ Excel::create('Laravel Excel', function($excel) {
 
 # Installation
 
-Require this package in your `composer.json` and update composer. This will download the package and PHPExcel of PHPOffice.
+### -- Technique Mods --
+
+Add the repository to your `composer.json` to include the following repository:
 
 ```php
-composer require "maatwebsite/excel:~2.1.0"
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/techniquedm/Laravel-Excel"
+    }
+  ],
 ```
+
+Then add the require for the `dev-wp` branch:
+
+```php
+  "require": {
+    "techniquedm/Laravel-Excel": "dev-wp"
+  },
+```
+
+Run composer update. The rest of these instructions are not completely accurate due to the differences in the Herbert and Laravel frameworks however they are close enough to point you in the right direction if you're attempting this for some reason...
+
+### -- End Technique Mods --
 
 In Laravel 5.5 or higher, this package will be automatically discovered and you can safely skip the following two steps.
 

@@ -1,6 +1,6 @@
 {
-  "name": "maatwebsite/excel",
-  "description": "An eloquent way of importing and exporting Excel and CSV in Laravel 4 with the power of PHPExcel",
+  "name": "techniquedm/laravel-excel",
+  "description": "An eloquent way of importing and exporting Excel and CSV in Laravel 4 with the power of PHPExcel - Technique modification for use in WordPress with heavily modified Herbert framework.",
   "license": "LGPL",
   "keywords": [
     "laravel",
@@ -15,6 +15,10 @@
     {
       "name": "Maatwebsite.nl",
       "email": "patrick@maatwebsite.nl"
+    },
+    {
+      "name": "Will Furphy",
+      "email": "will@techniquedm.com"
     }
   ],
   "require": {
@@ -38,7 +42,8 @@
     "illuminate/http": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
     "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
     "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
-    "illuminate/queue": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*"
+    "illuminate/queue": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+    "illuminate/bus": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*"
   },
   "autoload": {
     "classmap": [
